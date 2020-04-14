@@ -27,20 +27,6 @@ public class WordFrequencyGame {
     }
 
 
-    private Map<String, List<WordInfo>> getMap(List<WordInfo> wordInfoList) {
-        Map<String, List<WordInfo>> map = new HashMap<>();
-        for (WordInfo wordInfo : wordInfoList) {
-            if (!map.containsKey(wordInfo.getWord())) {
-                ArrayList temporaryWordInfoList = new ArrayList<>();
-                temporaryWordInfoList.add(wordInfo);
-                map.put(wordInfo.getWord(), temporaryWordInfoList);
-            } else {
-                map.get(wordInfo.getWord()).add(wordInfo);
-            }
-        }
-        return map;
-    }
-
     private List<WordInfo> calculateWordFrequency(String sentence) {
         List<String> words = Arrays.asList(sentence.split(SPACE_PATTERN));
         List<WordInfo> wordInfoList = new ArrayList<>();
